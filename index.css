@@ -1,0 +1,31 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.background-color {
+    background-color:  #5CDB95
+}
+
+.font-color {
+    color: #EDF5E1
+}
+
+.jumbo-background {
+    background-color: #05386B !important;
+}
+
+.margin-5 {
+    margin: 5px;
+}
+
+.ptop5 {
+    padding-top: 5px;
+}
+
+a {
+    color: #EDF5E1 !important;
+}
+
+.pbottom20 {
+    padding-bottom: 20px;
+}
