@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<script>
+//=============================================== Part A ==========================================
+      window.addEventListener('load', function () {
+          // validation number
+          correctNumber = false
+          while (correctNumber == false){
+              num = parseInt(prompt("Please enter your number: ", "number from 0 to 26"));
+                if ( isNaN(num) == true || num< 0 || num >26  ){
+                  alert("You entered number not in range 0 to 26 or not a number ");
+                }
+                else{
+                  correctNumber = true
+                }
+          }
+          // call generateButton
+          createAllButtons(num)
+          // call part B
+          let myRecipe = new Recipe("Chicken Cacciatore", 2, ["cinnamon", "lettuce", "onion"] );
+          myRecipe.print()
+          document.getElementById("title").innerHTML = myRecipe.title
+          document.getElementById("serves").innerHTML = myRecipe.serving
+      }, false);
+
+      function generateButton(text){
+          let button = document.createElement("button")
+          button.innerHTML = text
+          button.style.width ="80px"
+          button.style.height ="40px"
+          button.style.margin ="20px"
+          button.onclick = () => {
+            alert(`Button ${text} was click`)
+          }
+          document.getElementById("div").appendChild(button)
+      }
+
+      function createAllButtons (number){
+        for(let i = 0;i< number;i++){
+        let value = String.fromCharCode(i + 65)
+        console.log(value)
+        generateButton(value)
+      }
+    }
+
+      //=============================================== Part B ==========================================
+    function Recipe (title, serving, ingredients){
+      this.title = title
+      this.serving = serving
+      this.ingredients = ingredients
+      this.print = () => {
+        this.ingredients.forEach(item => {
+          let li = document.createElement("li")
+          let text =document.createTextNode(item)
+          li.appendChild(text)
+          document.getElementById("ingredients").appendChild(li)
+        })
+      }
+    }
+</script>
+<body>
+<div id="div"></div>
+<div id="recipe">
+      <h1>Title: <span id="title"></span></h1>
+      <h2>Serves: <span id="serves"></span></h2>
+      <ul id="ingredients">Ingredients:</ul>
+</div>
+
+</body>
+</html>
