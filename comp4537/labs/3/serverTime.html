@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Lab 2</title>
+
+      <!-- CSS only -->
+      <link rel="stylesheet" href="../../../../index.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <input id="name" placeholder="Enter your name..." />
+    <br /><br />
+    <button type="button" onClick="myFunc()">Click me!</button>
+    <br /><br />
+    <div id="serverText"></div>
+    <script>
+        function myFunc(str) {
+            let xhttp = new XMLHttpRequest();
+            let name = document.getElementById("name").value
+            xhttp.open("GET", "http://localhost:8888/?name=" + name, true);
+            xhttp.send();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("serverText").innerHTML = this.responseText;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
