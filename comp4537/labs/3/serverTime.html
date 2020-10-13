@@ -15,10 +15,11 @@
         <br /><br />
         <button type="button" onClick="myFunc()">Show me Heroku's server time!</button>
         <br /><br />
-        <div id="serverText">Loading...</div>
+        <div id="serverText"></div>
     </div>
     <script>
         function myFunc(str) {
+            document.getElementById("serverText").innerHTML = this.responseText;
             let xhttp = new XMLHttpRequest();
             let name = document.getElementById("name").value
             xhttp.open("GET", "https://protected-peak-96836.herokuapp.com/?name=" + name, true);
