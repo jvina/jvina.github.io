@@ -19,7 +19,7 @@
     </div>
     <script>
         function myFunc(str) {
-            document.getElementById("serverText").innerHTML = this.responseText;
+            document.getElementById("serverText").innerHTML = "Loading...";
             let xhttp = new XMLHttpRequest();
             let name = document.getElementById("name").value
             xhttp.open("GET", "https://protected-peak-96836.herokuapp.com/?name=" + name, true);
