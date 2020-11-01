@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 require('./comp4537/MemoryGame/config/routes')(app);
 // require('./api')(app);
 
-app.listen(8888, () => {
+app.listen(process.env.PORT || 8888, () => {
     console.log("server is running on port 8888.")
 })
 
