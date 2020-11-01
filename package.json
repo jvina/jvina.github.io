@@ -1,20 +1,30 @@
 {
   "name": "vina_lab1",
   "version": "1.0.0",
-  "description": "",
+  "description": "Memory Game",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jvina/jvina.github.io.git"
   },
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "restapi"
+  ],
+  "author": "jvina",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jvina/jvina.github.io/issues"
   },
-  "homepage": "https://github.com/jvina/jvina.github.io#readme"
+  "homepage": "https://github.com/jvina/jvina.github.io#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
 }
