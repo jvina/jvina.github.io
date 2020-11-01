@@ -291,8 +291,10 @@ function shuffle(array) {
                 return;
           }
           cardClicked.classList.add("show", "open");
+          console.log(cardClicked.children[0].src);
+          console.log(cardClicked.children[0].src.length);
 
-          if (cardClicked.children[0].src.slice(125) == "images/blue.png") {
+          if (cardClicked.children[0].src.slice(44) == "images/blue.png") {
             cardClicked.classList.add("match");
             cardClicked.classList.remove("show", "open");
             compareScore += 1;
