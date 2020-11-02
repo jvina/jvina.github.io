@@ -48,9 +48,9 @@
                 type:'POST',
                 data: $form.serialize(),
                 contentType: "application/json; charset=utf-8",
-                success:function(data, code, jqXHR) {
-                    location.href='./leaderboard.html'
-                }
+                // success:function(data, code, jqXHR) {
+                //     location.href='./leaderboard.html'
+                // }
             }).done(response => {
                 console.log(response)
             })
