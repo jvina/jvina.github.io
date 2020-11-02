@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="row justify-content-center  ">
-                <button type="submit" id="submit" class="btn btn-primary">SUBMIT</button>
+                <button type="submit" id="submit" onclick="submitHandler()" class="btn btn-primary">SUBMIT</button>
             </div>
         </div>
     </form>
@@ -40,8 +40,8 @@
         document.getElementById("userScore").innerHTML = localStorage.getItem("userScore");
 
           // AJAX
-        const $form = $('#myForm')
-        $form.on('submit', submitHandler)
+        // const $form = $('#myForm')
+        // $form.on('submit', submitHandler)
         function submitHandler(e) {
             // $.ajax({
             //     url: 'https://memory-game-jill.herokuapp.com/users',
