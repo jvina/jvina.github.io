@@ -43,16 +43,6 @@
         $form.on('submit', submitHandler)
         function submitHandler(e) {
             e.preventDefault();
-            // $.ajax({
-            //     url: 'https://memory-game-jill.herokuapp.com/users',
-            //     type:'POST',
-            //     data: $form.serialize(),
-            //     success:function(data, code, jqXHR) {
-            //         location.href='./leaderboard.html'
-            //     }
-            // }).done(response => {
-            //     console.log(response)
-            // })
             const data = {
                 name: document.getElementById("name").value,
                 score:  document.getElementById("score").value
