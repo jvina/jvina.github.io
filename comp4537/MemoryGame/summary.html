@@ -35,7 +35,6 @@
     <div class="d-flex justify-content-center"><button onclick="location.href='./index.html'" class="btn btn-secondary">RESTART</button></div>
 
     <script type="text/javascript">
-        localStorage.setItem("userName", document.getElementById("name").value);
         document.getElementById("score").value = localStorage.getItem("userScore");
         document.getElementById("score").readOnly = true;
         document.getElementById("userScore").innerHTML = localStorage.getItem("userScore");
@@ -58,6 +57,7 @@
             .then(response => response.json())
             .then(json => {
                 console.log(json);
+                localStorage.setItem("userName", document.getElementById("name").value);
                 location.href='./leaderboard.html';
             });
          
