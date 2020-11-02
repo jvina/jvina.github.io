@@ -39,10 +39,10 @@
         document.getElementById("score").readOnly = true;
         document.getElementById("userScore").innerHTML = localStorage.getItem("userScore");
 
-          // AJAX
-        // const $form = $('#myForm')
-        // $form.on('submit', submitHandler)
+        const $form = $('#myForm')
+        $form.on('submit', submitHandler)
         function submitHandler(e) {
+            e.preventDefault();
             // $.ajax({
             //     url: 'https://memory-game-jill.herokuapp.com/users',
             //     type:'POST',
@@ -53,8 +53,23 @@
             // }).done(response => {
             //     console.log(response)
             // })
-
-           console.log("hello")
+            const data = {
+                name: document.getElementById("name").value,
+                score:  document.getElementById("score").value
+            };
+            fetch('https://memory-game-jill.herokuapp.com/users', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
+            })
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+                location.href='./leaderboard.html';
+            });
+         
         }
     </script>
 
