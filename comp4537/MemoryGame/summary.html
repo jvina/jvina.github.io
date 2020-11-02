@@ -43,17 +43,27 @@
         const $form = $('#myForm')
         $form.on('submit', submitHandler)
         function submitHandler(e) {
-            $.ajax({
-                url: 'https://memory-game-jill.herokuapp.com/users',
-                type:'POST',
-                data: $form.serialize(),
-                contentType: "application/json; charset=utf-8",
-                // success:function(data, code, jqXHR) {
-                //     location.href='./leaderboard.html'
-                // }
-            }).done(response => {
-                console.log(response)
+            // $.ajax({
+            //     url: 'https://memory-game-jill.herokuapp.com/users',
+            //     type:'POST',
+            //     data: $form.serialize(),
+            //     success:function(data, code, jqXHR) {
+            //         location.href='./leaderboard.html'
+            //     }
+            // }).done(response => {
+            //     console.log(response)
+            // })
+            fetch('https://memory-game-jill.herokuapp.com/users', {
+                method: 'POST',
+                body: $form.serialize(),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
             })
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+            });
         }
     </script>
 
