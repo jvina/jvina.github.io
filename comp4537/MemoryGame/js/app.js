@@ -326,12 +326,12 @@ function shuffle(array) {
     function endGame() {
         localStorage.setItem("userScore", score);
         alert("Your score is 0 or negative. Game Over.");
-        location.replace("../summary.html");
+        location.replace("./summary.html");
     }
 
     function terminateGame() {
         localStorage.setItem("userScore", score);
-        location.replace("../summary.html");
+        location.replace("./summary.html");
     }
   
   deck.addEventListener("click", displayCardSymbol);
