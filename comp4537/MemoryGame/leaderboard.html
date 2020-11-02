@@ -12,8 +12,12 @@
 <body class="background-color">
     <br /><br />
     <div class="container">
+      <div class="parent">
+        <h2 id="currentUser" style="padding-right: 10px;"></h2><h2 id="currentScore"></h2>
+      </div>
+      </div>
       <div class="row justify-content-center">
-      <h3><label for="leaderboard">Leaderboard</label></h3><br />
+        <h3><label for="leaderboard">Leaderboard</label></h3><br />
       </div>
       <div class="row justify-content-center">
         <table name="leaderboard">
@@ -34,9 +38,11 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        var myObj = JSON.parse(this.responseText);
-        const singleRow = ({name, score}) => `<tr><td>${name}</td><td>${score}</td></tr>`;
-        $("#test").html(myObj.map(singleRow).join(','));
+          var myObj = JSON.parse(this.responseText);
+          const singleRow = ({name, score}) => `<tr><td>${name}</td><td>${score}</td></tr>`;
+          $("#test").html(myObj.map(singleRow).join(','));
+          document.getElementById("currentUser").innerHTML = "Your Name: " + localStorage.getItem("userName");
+          document.getElementById("currentScore").innerHTML = "Your Score: " + localStorage.getItem("userScore");
         }
       };
       xhttp.open("GET", "https://memory-game-jill.herokuapp.com/users", true);
