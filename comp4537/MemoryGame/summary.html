@@ -17,14 +17,13 @@
     <br />
     <div class="parent"><h3>Your Final Score: </h3><h3 id="userScore"></h3></div>
     <br />
-    <form action="https://memory-game-jill.herokuapp.com/users" method="POST">
+    <form method="POST" id="myForm">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name="name" class="form-control input-large" id="name"  placeholder="Enter name"> <br />
                     <label for="score">Score</label>
-                    <!-- <input type="text" name="score" class="form-control input-large" id="score"  placeholder="Enter name"> -->
                     <input type="text" name="score" class="form-control input-large" id="score">
                 </div>
             </div>
@@ -40,6 +39,22 @@
         document.getElementById("score").readOnly = true;
         document.getElementById("userScore").innerHTML = localStorage.getItem("userScore");
 
+          // AJAX
+          const $form = $('#myForm')
+        $form.on('submit', submitHandler)
+        function submitHandler(e) {
+            e.preventDefault();
+            $.ajax({
+                url: 'https://memory-game-jill.herokuapp.com/users',
+                type:'POST',
+                data: $form.serialize(),
+                success:function(data, code, jqXHR) {
+                    location.href='./leaderboard.html'
+                }
+            }).done(response => {
+                console.log(response)
+            })
+        }
     </script>
 
 </body>
