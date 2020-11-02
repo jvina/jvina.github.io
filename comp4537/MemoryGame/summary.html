@@ -40,10 +40,9 @@
         document.getElementById("userScore").innerHTML = localStorage.getItem("userScore");
 
           // AJAX
-          const $form = $('#myForm')
+        const $form = $('#myForm')
         $form.on('submit', submitHandler)
         function submitHandler(e) {
-            e.preventDefault();
             $.ajax({
                 url: 'https://memory-game-jill.herokuapp.com/users',
                 type:'POST',
