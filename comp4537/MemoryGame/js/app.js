@@ -194,7 +194,6 @@ function shuffle(array) {
     if (tilesGuess.innerHTML == "4") {
         if (countClick == 4 && countClick == compareScore) {
             setTimeout(function() {
-                alert("You win. You are moving on to the next level.");
                 countClick = 0;
                 compareScore = 0;
                 ul.innerHTML = "";
@@ -203,7 +202,6 @@ function shuffle(array) {
             })
         } else if (countClick == 4 && countClick != compareScore) {
             setTimeout(function() {
-                alert("You lost. Sending you back to the previous level.");
                 countClick = 0;
                 compareScore = 0;
                 ul.innerHTML = "";
@@ -216,7 +214,6 @@ function shuffle(array) {
     if (tilesGuess.innerHTML == "5") {
         if (countClick == 5 && countClick == compareScore) {
             setTimeout(function() {
-                alert("You win. You are moving on to the next level.");
                 countClick = 0;
                 compareScore = 0;
                 ul.innerHTML = "";
@@ -225,7 +222,6 @@ function shuffle(array) {
             })
         } else if (countClick == 5 && countClick != compareScore) {
             setTimeout(function() {
-                alert("You lost. Sending you back to the previous level.");
                 countClick = 0;
                 compareScore = 0;
                 ul.innerHTML = "";
@@ -239,7 +235,6 @@ function shuffle(array) {
     if (tilesGuess.innerHTML == "6") {
         if (countClick == 6 && countClick == compareScore) {
             setTimeout(function() {
-                alert("You win. You are moving on to the next level.");
                 countClick = 0;
                 compareScore = 0;
                 ul.innerHTML = "";
@@ -248,7 +243,6 @@ function shuffle(array) {
             })
         } else if (countClick == 6 && countClick != compareScore) {
             setTimeout(function() {
-                alert("You lost. Sending you back to the previous level.");
                 countClick = 0;
                 compareScore = 0;
                 ul.innerHTML = "";
@@ -262,7 +256,6 @@ function shuffle(array) {
     if (tilesGuess.innerHTML == "7") {
         if (countClick == 7 && countClick == compareScore) {
             setTimeout(function() {
-                alert("You win. Try this level again to score more points.");
                 countClick = 0;
                 compareScore = 0;
                 ul.innerHTML = "";
@@ -271,7 +264,6 @@ function shuffle(array) {
             })
         } else if (countClick == 7 && countClick != compareScore) {
             setTimeout(function() {
-                alert("You lost. Sending you back to the previous level.");
                 countClick = 0;
                 compareScore = 0;
                 ul.innerHTML = "";
